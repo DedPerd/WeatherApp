@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: inherit
+}
+input {
+    outline: none;
+    border: none;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+}
+.weather {
+    width: 600px;
+    height: 435px;
+    outline: 1px solid #000;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.weather__search {
+    flex: 1 100%;
+    height: 45px;
+    position: relative;
+}
+.weather__search > input[type="text"] {
+    width: 100%;
+    height: 100%;
+    outline: 1px solid #000;
+    padding: 0 50px 0 16px;
+    font-size: 18px;
+    color: #696969;
+}
+.weather__search > input[type="image"] {
+    position: absolute;
+    right: 21px;
+    top: 12px;
+}
+.forecast ,
+.weather__added-locations {
+    height: 390px;
+    flex: 1;
+}
+.forecast {
+    outline: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+}
+.forecast__tabs {
+    flex: 1;
+}
+.forecast__tabs-item {
+    height: 100%;
+    display: none;
+}
+.forecast__tabs-item_active {
+    display: block;
+}
+.forecast__tabs-item_active#now-tab {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.now-tab__temperature {
+    font-size: 70px;
+    position: absolute;
+    top: 20px;
+    left: 26px;
+}
+.now-tab__temperature::after {
+    content: '\00B0';
+}
+.now-tab__weather-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+}
+.now-tab__city {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.now-tab__city-name {
+    flex: 1;
+    font-size: 24px; 
+    height: 100%; 
+    width: 250px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;  
+}
+.now-tab__like-button {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.forecast__nav {
+    display: flex;
+}
+.forecast__nav-item {
+    flex: 1;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #000; 
+    border-left: 1px solid #000;
+}
+.forecast__nav-item:first-of-type {
+    border-left: none;
+}
+.forecast__nav-item_active {
+    background-color: #000;
+    color: #fff;
+}

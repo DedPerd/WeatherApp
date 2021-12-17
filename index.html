@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Weather</title>
+</head>
+<body>
+    <div class="weather">
+        <form class="weather__search">
+            <input type="text" placeholder="Enter the city name" class="weather__input">
+            <input type="image" src="./img/search.svg" alt="Search" class="weather__search-button">
+        </form>
+        <div class="weather__forecast forecast">
+            <div class="forecast__tabs">
+                <div class="forecast__tabs-item now-tab" id="now-tab">
+                    <div class="now-tab__temperature">0</div>
+                    <img src="" alt="" class="now-tab__weather-icon">
+                    <div class="now-tab__city">
+                        <div class="now-tab__city-name"></div>
+                        <img src="./img/like.svg" alt="Add to favourites" class="now-tab__like-button">
+                    </div>
+                </div>
+                <div class="forecast__tabs-item" id="details-tab">А теперь мои пальцы набирают текст</div>
+                <div class="forecast__tabs-item" id="forecast-tab">*Типо картинка*</div>
+            </div>
+            <nav class="forecast__nav">
+                <a href="#now-tab" class="forecast__nav-item">Now</a>
+                <a href="#details-tab" class="forecast__nav-item">Details</a>
+                <a href="#forecast-tab" class="forecast__nav-item">Forecast</a>
+            </nav>
+        </div>
+        <div class="weather__added-locations"></div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
