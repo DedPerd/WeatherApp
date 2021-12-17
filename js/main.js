@@ -20,10 +20,10 @@ document.querySelectorAll('.forecast__nav-item').forEach(item => {
     });
 });
 
-const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
+const serverUrl = 'https://api.openweathermap.org/data/2.5/weather';
 const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
 let cityName = 'Kazan’';
-let url = 'http://api.openweathermap.org/data/2.5/weather?q=kazan&appid=f660a2fb1e4bad108d6160b7f58c555f&units=metric';
+let url = 'https://api.openweathermap.org/data/2.5/weather?q=kazan&appid=f660a2fb1e4bad108d6160b7f58c555f&units=metric';
 
 document.querySelector('.weather__search').addEventListener('submit', (event) => {
     event.preventDefault();
@@ -40,7 +40,7 @@ function updateWeather() {
     }).then(weather => {
         const temperature = Math.round(weather.main.temp);
         const iconCode = weather.weather[0].icon.slice(0, -1) + 'n'; // d в конце - это светлая тема, а n - темная;
-        const iconUrl = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+        const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
         const cityName = weather.name;
 
         document.querySelector('.now-tab__temperature').textContent = String(temperature);
