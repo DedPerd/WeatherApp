@@ -1,20 +1,48 @@
-* {
+/* css reset */
+*,
+*::before,
+*::after {
     padding: 0;
     margin: 0;
+    border: 0;
     box-sizing: border-box;
 }
 a {
     text-decoration: none;
-    color: inherit
+    color: inherit;
 }
-input {
-    outline: none;
-    border: none;
+ul,
+ol,
+li {
+    list-style: none;
 }
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+html,
 body {
-    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    line-height: 1;
+    font-size: 16px;
+    background-color: #fff;
     color: #000;
+    font-family: 'Roboto', sans-serif;
 }
+input {outline:none;}
+button{
+    background-color: transparent;
+    cursor: pointer;
+}
+/* ========================================================================== */
 .weather {
     width: 600px;
     height: 435px;
@@ -125,4 +153,28 @@ body {
 .forecast__nav-item_active {
     background-color: #000;
     color: #fff;
+}
+
+.added-locations {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.added-locations__header {
+    height: 66px;
+    padding: 32px 0 0 16px;
+}
+.added-locations__list {
+    border-top: 1px solid #000;
+    padding: 34px 0 16px 16px;
+    overflow: auto;
+    flex: 1;
+}
+.added-locations__list > li {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 268px;
+    margin: 0 0 16px 0;
+    cursor: pointer;
 }
