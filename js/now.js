@@ -7,6 +7,7 @@ export const Now = {
     addedLocations: AddedLocations,
     getWeather(weather) {
         this.locationName = weather.name;
+        localStorage.setItem('currentLocation', this.locationName);
         this.temperature = Math.round(weather.main.temp)
         this.iconUrl = getIconUrl(weather.weather[0].icon, 'dark')
         this.isLiked = this.checkLiked();
@@ -46,4 +47,3 @@ export const Now = {
     }
 }
 document.querySelector('.now-tab__like-button').addEventListener('click', () => Now.clickHandler());
-window.Now = Now;

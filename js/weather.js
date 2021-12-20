@@ -1,5 +1,6 @@
 import './view.js';
 import { Now } from "./now.js";
+import { AddedLocations } from './addedLocations.js';
 export const Weather = {
     locationName: '',
     serverUrl: 'https://api.openweathermap.org/data/2.5/weather',
@@ -8,7 +9,7 @@ export const Weather = {
         const url = `${this.serverUrl}?q=${this.locationName}&appid=${this.apiKey}&units=metric`;
         return fetch(url)
         .then(response => response.json())
-        .catch(alert)
+        .catch(alert);
     },
     updateWeather() {
         this.getWeather()
@@ -27,5 +28,13 @@ export const Weather = {
 }
 document.querySelector('.weather__search').addEventListener('submit', () => Weather.submitHandler(event));
 
-window.Weather = Weather;
+
+if(localStorage.getItem('currentLocation') === null) {
+    Weather.locationName = 'Казань';
+} else {
+    Weather.locationName = localStorage.getItem('currentLocation');
+}
+Weather.updateWeather();
+AddedLocations.updateView();
+
 
