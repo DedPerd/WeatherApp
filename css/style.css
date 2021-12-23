@@ -43,6 +43,9 @@ button{
     cursor: pointer;
 }
 /* ========================================================================== */
+.degree-celsius-symbol::after {
+    content: '\00B0';
+}
 .weather {
     width: 600px;
     height: 435px;
@@ -100,9 +103,6 @@ button{
     top: 20px;
     left: 26px;
 }
-.now-tab__temperature::after {
-    content: '\00B0';
-}
 .now-tab__weather-icon {
     position: absolute;
     top: 50%;
@@ -111,7 +111,7 @@ button{
     width: 150px;
     height: 150px;
 }
-.now-tab__city {
+.now-tab__location {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
@@ -120,7 +120,7 @@ button{
     align-items: center;
     justify-content: space-between;
 }
-.now-tab__city-name {
+.now-tab__location-name {
     flex: 1;
     font-size: 24px; 
     height: 100%; 
@@ -133,6 +133,27 @@ button{
     width: 22px;
     height: 22px;
     cursor: pointer;
+}
+
+.details-tab__location-name {
+    height: 66px;
+    padding: 32px 0 0 16px;
+}
+.details-tab {
+    font-size: 24px;
+}
+
+.details-tab__weather-properties {
+    padding: 34px 0 16px 16px;
+    overflow: auto;
+    flex: 1;
+}
+.details-tab__weather-properties > li {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 268px;
+    margin: 0 0 16px 0;
 }
 
 .forecast__nav {

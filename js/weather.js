@@ -1,5 +1,6 @@
 import './view.js';
 import { Now } from "./now.js";
+import { Details } from './details.js';
 import { AddedLocations } from './addedLocations.js';
 export const Weather = {
     locationName: '',
@@ -16,6 +17,9 @@ export const Weather = {
         .then(weather => {
             Now.getWeather(weather);
             Now.updateView();
+            
+            Details.getWeather(weather);
+            Details.updateView();
         })
         .catch(alert);
     },

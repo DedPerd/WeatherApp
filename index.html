@@ -19,17 +19,26 @@
         <div class="weather__forecast forecast">
             <div class="forecast__tabs">
                 <div class="forecast__tabs-item now-tab" id="now-tab">
-                    <div class="now-tab__temperature">0</div>
+                    <div class="now-tab__temperature degree-celsius-symbol">0</div>
                     <img src="" alt="" class="now-tab__weather-icon">
-                    <div class="now-tab__city">
-                        <div class="now-tab__city-name"></div>
+                    <div class="now-tab__location">
+                        <div class="now-tab__location-name"></div>
                         <svg class="now-tab__like-button" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path opacity="0.54" fill-rule="evenodd" clip-rule="evenodd" d="M17.5 1C15.0556 1 12.8556 2.7875 12 5.125C11.1444 2.7875 8.94444 1 6.5 1C3.44444 1 1 3.6125 1 7.1875C1 12 5.27778 16.125 12 23C18.7222 16.125 23 12 23 7.1875C23 3.6125 20.5556 1 17.5 1Z" stroke="black" stroke-width="2"/>
                         </svg>
                     </div>
                 </div>
-                <div class="forecast__tabs-item" id="details-tab">А теперь мои пальцы набирают текст</div>
-                <div class="forecast__tabs-item" id="forecast-tab">*Типо картинка*</div>
+                <div class="forecast__tabs-item details-tab" id="details-tab">
+                    <div class="details-tab__location-name"></div>
+                    <ul class="details-tab__weather-properties">
+                        <li class="details-tab__temperature degree-celsius-symbol"></li>
+                        <li class="details-tab__feels-like degree-celsius-symbol"></li>
+                        <li class="details-tab__weather-condition"></li>
+                        <li class="details-tab__sunrise"></li>
+                        <li class="details-tab__sunset"></li>
+                    </ul>
+                </div>
+                <div class="forecast__tabs-item" id="forecast-tab">*Мои пальцы набирают текст*</div>
             </div>
             <nav class="forecast__nav">
                 <a href="#now-tab" class="forecast__nav-item">Now</a>

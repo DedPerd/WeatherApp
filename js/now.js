@@ -25,7 +25,7 @@ export const Now = {
     updateView() {
         document.querySelector('.now-tab__temperature').textContent = String(this.temperature);
         document.querySelector('.now-tab__weather-icon').src = this.iconUrl;
-        document.querySelector('.now-tab__city-name').textContent = this.locationName;
+        document.querySelector('.now-tab__location-name').textContent = this.locationName;
 
         const likeButton = document.querySelector('.now-tab__like-button');
         if(this.isLiked) {
