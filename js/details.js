@@ -5,15 +5,15 @@ export const Details = {
     weatherCondition: '',
     sunrise: '',
     sunset: '',
-    getWeather(weather) {
+    getCurrentWeather(weather) {
         this.locationName = weather.name;
         this.temperature = Math.round(weather.main.temp);
         this.feelsLike = Math.round(weather.main.feels_like);
         this.weatherCondition = weather.weather[0].main;
-        this.sunrise = getFormattedDate(weather.sys.sunrise);
-        this.sunset = getFormattedDate(weather.sys.sunset);
+        this.sunrise = getTime(weather.sys.sunrise * 1000);
+        this.sunset = getTime(weather.sys.sunset * 1000);
 
-        function getFormattedDate(timestamp) {
+        function getTime(timestamp) {
             const date = new Date(timestamp);
             let hours = String(date.getHours());
             if(hours.length === 1) hours = '0' + hours;

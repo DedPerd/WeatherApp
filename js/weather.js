@@ -1,27 +1,40 @@
 import './view.js';
 import { Now } from "./now.js";
 import { Details } from './details.js';
+import { Forecast } from './forecast.js';
 import { AddedLocations } from './addedLocations.js';
 export const Weather = {
     locationName: '',
-    serverUrl: 'https://api.openweathermap.org/data/2.5/weather',
-    apiKey: 'f660a2fb1e4bad108d6160b7f58c555f',
-    getWeather() {
-        const url = `${this.serverUrl}?q=${this.locationName}&appid=${this.apiKey}&units=metric`;
+    apiKey: 'c66e144fd8e78f9ab750fc065dbc79bd',
+    getCurrentWeather() {
+        const serverUrl = 'https://api.openweathermap.org/data/2.5/weather';
+        const url = `${serverUrl}?q=${this.locationName}&appid=${this.apiKey}&units=metric`;
+        return fetch(url)
+        .then(response => response.json())
+        .catch(alert);
+    },
+    getForecast() {
+        const serverUrl = 'https://api.openweathermap.org/data/2.5/forecast';
+        const url = `${serverUrl}?q=${this.locationName}&appid=${this.apiKey}&units=metric`;
         return fetch(url)
         .then(response => response.json())
         .catch(alert);
     },
     updateWeather() {
-        this.getWeather()
+        this.getCurrentWeather()
         .then(weather => {
-            Now.getWeather(weather);
+            Now.getCurrentWeather(weather);
             Now.updateView();
             
-            Details.getWeather(weather);
+            Details.getCurrentWeather(weather);
             Details.updateView();
         })
         .catch(alert);
+        this.getForecast()
+        .then(forecast => {
+            Forecast.getForecast(forecast);
+            Forecast.updateView();
+        })
     },
     submitHandler(event) {
         event.preventDefault();
@@ -30,7 +43,7 @@ export const Weather = {
         this.updateWeather();
     }
 }
-document.querySelector('.weather__search').addEventListener('submit', () => Weather.submitHandler(event));
+document.querySelector('.weather__search').addEventListener('submit', event => Weather.submitHandler(event));
 
 
 if(localStorage.getItem('currentLocation') === null) {

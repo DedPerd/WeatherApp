@@ -20,7 +20,7 @@
             <div class="forecast__tabs">
                 <div class="forecast__tabs-item now-tab" id="now-tab">
                     <div class="now-tab__temperature degree-celsius-symbol">0</div>
-                    <img src="" alt="" class="now-tab__weather-icon">
+                    <img src="" alt="Weather condition" class="now-tab__weather-icon">
                     <div class="now-tab__location">
                         <div class="now-tab__location-name"></div>
                         <svg class="now-tab__like-button" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,10 @@
                         <li class="details-tab__sunset"></li>
                     </ul>
                 </div>
-                <div class="forecast__tabs-item" id="forecast-tab">*Мои пальцы набирают текст*</div>
+                <div class="forecast__tabs-item forecast-tab" id="forecast-tab">
+                    <div class="forecast-tab__location-name"></div>
+                    <ul class="forecast-tab__forecast-list forecast-list"></ul>
+                </div>
             </div>
             <nav class="forecast__nav">
                 <a href="#now-tab" class="forecast__nav-item">Now</a>

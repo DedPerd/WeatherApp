@@ -5,11 +5,11 @@ export const Now = {
     iconUrl: '',
     isLiked: false,
     addedLocations: AddedLocations,
-    getWeather(weather) {
+    getCurrentWeather(weather) {
         this.locationName = weather.name;
         localStorage.setItem('currentLocation', this.locationName);
-        this.temperature = Math.round(weather.main.temp)
-        this.iconUrl = getIconUrl(weather.weather[0].icon, 'dark')
+        this.temperature = Math.round(weather.main.temp);
+        this.iconUrl = getIconUrl(weather.weather[0].icon, 'dark');
         this.isLiked = this.checkLiked();
 
         function getIconUrl(iconCode, theme) {
