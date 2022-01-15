@@ -10,7 +10,7 @@ export const Forecast = {
             iconUrl: '',
         },
     ],
-    getForecast(forecast) { 
+    getForecast(forecast) {
         this.locationName = forecast.city.name;  
         this.forecastList = forecast.list.map(item => {
             return {
